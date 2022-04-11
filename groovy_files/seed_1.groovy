@@ -1,5 +1,3 @@
-def gitUrl = "https://github.com/CarlosBarroso/seed_jobs.git"
-
 job("seed_1") {
     description "Builds MyProject from master branch."
     parameters {
@@ -8,7 +6,7 @@ job("seed_1") {
     scm {
         git {
             remote {
-                url gitUrl,
+                url  "https://github.com/CarlosBarroso/seed_jobs.git",
                 branch "origin/master"
             }
             extensions {

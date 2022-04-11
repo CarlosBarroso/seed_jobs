@@ -1,8 +1,11 @@
 pipelineJob("seed_3") {
     definition {
         cpsScm {
-            scm {
-                git("https://github.com/CarlosBarroso/seed_jobs.git")
+            remote {
+                name('origin')
+                    url("https://github.com/CarlosBarroso/seed_jobs.git")
+                 }
+                 branch('master')
             }
             scriptPath("jenkinsfiles/seed_1.jenkinsfile")
         }

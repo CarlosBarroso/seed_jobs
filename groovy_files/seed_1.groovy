@@ -1,5 +1,6 @@
 pipelineJob("seed_3") {
     definition {
+        description('example seed_3')
         cpsScm {
             lightweight(false)
             scm {

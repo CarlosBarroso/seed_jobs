@@ -8,7 +8,7 @@ job("seed_1") {
     scm {
         git {
             remote {
-                url gitUrl.
+                url gitUrl,
                 branch "origin/master"
             }
             extensions {

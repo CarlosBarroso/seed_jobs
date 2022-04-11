@@ -1,10 +1,31 @@
 job("seed_1") {
     description "Builds MyProject from master branch."
+    
+    logRotator(-1, 15, 1, -1)
+    
     parameters {
         stringParam('COMMIT', 'HEAD', 'Commit to build')
     }
 
-    steps {
-        shell "echo seed job"
+    properties {
+        disableConcurrentBuilds()
+    }
+
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        name('origin')
+                        url('https://github.com/CarlosBarroso/seed_jobs.git')
+                    }
+                    branch('main')
+                    extensions {
+                        wipeOutWorkspace()
+                    }
+                }
+            }
+            scriptPath('jenkinsfiles/seed_1.jenkinsfile')
+        }
     }
 }

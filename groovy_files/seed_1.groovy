@@ -7,18 +7,7 @@ job("seed_1") {
         stringParam('COMMIT', 'HEAD', 'Commit to build')
     }
 
-    definition {
-        cpsScm {
-            scm {
-                git {
-                    remote {             
-                        url('https://github.com/CarlosBarroso/seed_jobs.git')
-                    }
-                    branch('*/main')           
-                }
-            }
-            lightweight()
-            //scriptPath('jenkinsfiles/seed_1.jenkinsfile')
-        }
+    steps {
+      shell('echo Hello World!')
     }
 }

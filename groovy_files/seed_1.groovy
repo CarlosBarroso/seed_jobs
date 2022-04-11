@@ -3,7 +3,7 @@ pipelineJob("seed_3") {
         cpsScm {
             lightweight(false)
             scm {
-                git("https://github.com/CarlosBarroso/seed_jobs.git", "main")
+                github("CarlosBarroso/seed_jobs", "main")
                  
             }
             scriptPath("jenkinsfiles/seed_1.jenkinsfile")

@@ -7,25 +7,18 @@ job("seed_1") {
         stringParam('COMMIT', 'HEAD', 'Commit to build')
     }
 
-    properties {
-        disableConcurrentBuilds()
-    }
-
     definition {
         cpsScm {
             scm {
                 git {
-                    remote {
-                        name('origin')
+                    remote {             
                         url('https://github.com/CarlosBarroso/seed_jobs.git')
                     }
-                    branch('main')
-                    extensions {
-                        wipeOutWorkspace()
-                    }
+                    branch('*/main')           
                 }
             }
-            scriptPath('jenkinsfiles/seed_1.jenkinsfile')
+            lightweight()
+            //scriptPath('jenkinsfiles/seed_1.jenkinsfile')
         }
     }
 }

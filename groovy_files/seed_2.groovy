@@ -5,6 +5,6 @@ job("seed_2") {
     }
 
     steps {
-        shell "echo seed job  ${params.'COMMIT'}"
+        shell "echo seed job  "
     }
 }

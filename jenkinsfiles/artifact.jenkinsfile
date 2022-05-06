@@ -5,7 +5,7 @@ pipeline {
         stage("download"){
             steps {
               echo "step 1 ${params.URL} "
-              httpRequest  authentication: 'jenkins_credentials', responseHandle: 'NONE', url: "${params.URL}", wrapAsMultipart: false
+              httpRequest  authentication: 'jenkins_credentials', outputFile: "${params.OUTPUT_FILE}", responseHandle: 'NONE', url: "${params.URL}", wrapAsMultipart: false
             }
         }
         stage("archive artifacts"){

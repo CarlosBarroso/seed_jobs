@@ -5,6 +5,7 @@ job("seed_2") {
     }
 
     steps {
-        shell "echo seed job"
+        def _branch = params.COMMIT
+        shell "echo seed job ${_branch}"
     }
 }

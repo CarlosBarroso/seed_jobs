@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("step 1"){
             steps {
-              echo "step 1"
+              echo "step 1 ${params.COMMIT} "
             }
         }
     }

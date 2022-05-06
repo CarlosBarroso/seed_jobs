@@ -11,7 +11,7 @@ pipelineJob("DownloadArtifact") {
                 github("CarlosBarroso/seed_jobs", "main")
                  
             }
-            scriptPath("jenkinsfilesartifact.jenkinsfile")
+            scriptPath("jenkinsfiles/artifact.jenkinsfile")
         }
     }
 }

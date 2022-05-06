@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage("download"){
+            steps {
+              echo "step 1 ${params.URL} "
+              httpRequest responseHandle: 'NONE', url: ${params.URL}, wrapAsMultipart: false
+            }
+        }
+        stage("archive artifacts"){
+            steps {
+              archiveArtifacts artifacts: '*', followSymlinks: false
+            }
+        }
+    }
+}

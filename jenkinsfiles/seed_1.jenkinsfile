@@ -6,7 +6,7 @@ pipeline {
             steps {
               echo "step 1 ${params.COMMIT} "
               writeFile file: 'test.txt', text: 'texto de ejemplo'
-              sh 'echo asdf >> artifact.properties'
+              sh 'echo "parametro:${params.COMMIT}" > artifact.properties'
             }
         }
         stage("archive artifacts"){

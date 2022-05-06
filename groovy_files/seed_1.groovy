@@ -1,6 +1,10 @@
 pipelineJob("seed_3") {
     definition {
         description('example seed_3')
+        parameters {
+          stringParam('COMMIT', 'HEAD', 'Commit to build')
+        }
+
         cpsScm {
             lightweight(false)
             scm {

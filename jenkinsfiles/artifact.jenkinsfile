@@ -6,7 +6,7 @@ pipeline {
             steps {
               echo "step 1 ${params.URL} "
               httpRequest  authentication: 'jenkins_credentials', outputFile: "${params.OUTPUT_FILE}", responseHandle: 'NONE', url: "${params.URL}", wrapAsMultipart: false
-              unzip zipFile: "${params.OUTPUT_FILE}"
+              sh 'unzip  "${params.OUTPUT_FILE}'
             }
         }
         stage("archive artifacts"){

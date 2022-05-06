@@ -5,7 +5,7 @@ pipeline {
         stage("step 1"){
             steps {
               echo "step 1 ${params.COMMIT} "
-              echo "test" >> fichero.txt
+              touch fichero.txt
             }
         }
     }
